@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const AdminLoginRouter = express.Router()
 
@@ -10,7 +11,7 @@ const {requestOTP , verifyOTP} = require('./../controllers/OTPMailer')
 
 const jwt = require('jsonwebtoken');
 
-const KEY = "Admin";
+const KEY = process.env.JWT_ADMIN_KEY;
 
 
 //Middleware to check if admin already exists
