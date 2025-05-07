@@ -1,9 +1,10 @@
+require('dotenv').config();
 const express = require('express');//importing express
 const db = require('../DBConnection');//importing databaseConnection
 //const {getISTDateTime, getFutureISTDateTime} = require('../ISTtimeConversionModule');//importing IST time conversion module
 const jwt = require('jsonwebtoken');//importing jsonwebtoken
 
-const KEY = "voting"
+const KEY = process.env.JWT_KEY
 
 const { requestOTP, verifyOTP } = require('../controllers/OTPMailer');
 
