@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express'); // importing express
 const cors = require('cors');//importing cors
 const app = express();//creating express app
@@ -6,7 +7,7 @@ const app = express();//creating express app
 app.use(cors())
 app.use(express.json())//for parsing application/jsons
 const db = require('./DBConnection');
-const PORT = 5000;
+const PORT = process.env.PORT;
 
 //importing bunch of routers ---------
 //            _____________          |               ____     _ _ _      ____      ___
